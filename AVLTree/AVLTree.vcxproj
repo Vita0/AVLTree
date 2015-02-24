@@ -78,6 +78,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\!work %27n sth\GitHub_ClonePath\AVLTree\AVLTree\avltree.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\!work %27n sth\GitHub_ClonePath\AVLTree\AVLTree\avltree.cpp" />
+    <ClCompile Include="..\..\..\..\!work %27n sth\GitHub_ClonePath\AVLTree\AVLTree\main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
