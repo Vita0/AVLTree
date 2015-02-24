@@ -2,6 +2,10 @@
 #define AVLTREE_H
 
 class AVLTree {
+    int value;
+    AVLTree *avlt_left, *avlt_right;
+    int height;
+
 public:
     AVLTree(); // конструктор по умолчанию
     ~AVLTree(); // деструктор
@@ -16,4 +20,7 @@ public:
     void delAll(const AVLTree& tree);
     void clear(); // очистить дерево
     bool empty(); // вернуть true если пустое
+
+    AVLTree(AVLTree &avlt);
+    //int getValue(); // получить значение верхушки дерева
 };#endif // AVLTREE_H

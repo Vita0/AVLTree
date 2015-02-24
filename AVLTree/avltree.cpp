@@ -10,7 +10,7 @@ AVLTree::AVLTree()
 AVLTree::AVLTree(AVLTree &avlt)
     :value(avlt.value)
 {
-    value
+    
 }
 
 //int AVLTree::getValue()
