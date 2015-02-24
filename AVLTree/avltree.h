@@ -1,3 +1,6 @@
+#ifndef AVLTREE_H
+#define AVLTREE_H
+
 class AVLTree {
 public:
     AVLTree(); // конструктор по умолчанию
@@ -13,4 +16,4 @@ public:
     void delAll(const AVLTree& tree);
     void clear(); // очистить дерево
     bool empty(); // вернуть true если пустое
-};
+};#endif // AVLTREE_H
