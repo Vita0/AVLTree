@@ -1,4 +1,4 @@
-﻿Build started 25.02.2015 19:55:17.
+﻿Build started 25.02.2015 20:36:42.
      1>Project "D:\!work 'n sth\GitHub_ClonePath\AVLTree\AVLTree\AVLTree.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          D:\Program Files (x86)\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt "..\..\..\..\!work 'n sth\GitHub_ClonePath\AVLTree\AVLTree\main.cpp"
@@ -11,4 +11,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.96
+Time Elapsed 00:00:00.86

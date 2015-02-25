@@ -1,34 +1,51 @@
 #include "avltree.h"
 
+////////////////////////////////////
 #include <iostream>
 using namespace std;
 void print_new(int number)
 {
-    cout << "   NEW note " << number << endl;
+    static int a;
+    ++a;
+    cout << a << "      NEW note " << number << endl;
 }
 void print_delete(int number)
 {
-    cout << "DELETE note " << number << endl;
+    static int a;
+    ++a;
+    cout << a << "   DELETE note " << number << endl;
 }
 void print_new_tree(int number)
 {
-    cout << "   NEW tree " << number << endl;
+    static int a;
+    ++a;
+    cout << a << "      NEW tree " << number << endl;
 }
 void print_delete_tree(int number)
 {
-    cout << "DELETE tree " << number << endl;
+    static int a;
+    ++a;
+    cout << a << "   DELETE tree " << number << endl;
 }
+////////////////////////////////////
+
+AVLTree::AVLTree()
+    :note(nullptr)
+{}
 
 AVLTree::AVLNote::AVLNote(int value)
-    :value(value),
+    : value(value),
     note_left(nullptr),
     note_right(nullptr),
     height(-1)
 {}
 
-AVLTree::AVLTree()
-    :note(nullptr)
-{}
+AVLTree::~AVLTree()
+{
+    if (!note->empty())
+        print_delete_tree(note->value);
+    delete note;
+}
 
 AVLTree::AVLNote::~AVLNote()
 {
@@ -40,11 +57,9 @@ AVLTree::AVLNote::~AVLNote()
     delete note_right;
 }
 
-AVLTree::~AVLTree()
+bool AVLTree::empty()
 {
-    if (!note->empty())
-        print_delete_tree(note->value);
-    delete note;
+    return (note->empty());
 }
 
 bool AVLTree::AVLNote::empty()
@@ -52,9 +67,16 @@ bool AVLTree::AVLNote::empty()
     return (this == nullptr);
 }
 
-bool AVLTree::empty()
+void AVLTree::add(int number)
 {
-    return (note->empty());
+    if (empty())
+    {
+        note = new AVLNote(number);
+        print_new_tree(number);
+    }
+    else
+        note->add(number);
+    return;
 }
 
 void AVLTree::AVLNote::add(int number)
@@ -80,16 +102,28 @@ void AVLTree::AVLNote::add(int number)
     return;
 }
 
-void AVLTree::add(int number)
+bool AVLTree::contains(int number) const
 {
-    if (empty())
-    {
-        note = new AVLNote(number);
-        print_new_tree(number);
-    }
+    if (note->empty())
+        return false;
     else
-        note->add(number);
-    return;
+        return note->contains(number);
+}
+
+bool AVLTree::AVLNote::contains(int number) const
+{
+    if (value == number)
+        return true;
+    if (number < value)
+        if (note_left->empty())
+            return false;
+        else
+        return note_left->contains(number);
+    else
+        if (note_right->empty())
+            return false;
+        else
+        return note_right->contains(number);
 }
 
 //AVLTree::AVLTree(AVLTree &avlt)
