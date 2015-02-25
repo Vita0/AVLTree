@@ -11,7 +11,7 @@ public:
     void add(int number); //+ добавление числа в дерево
     void del(int number); // удаление числа из дерева
     // проверка наличия числа, результат true если есть
-    bool contains(int number) const;//+-
+    bool contains(int number) const;//+
     int size() const; // выдат количество чисел в дереве
     // Добавить все числа из tree в это дерево
     void addAll(const AVLTree& tree);
@@ -33,10 +33,13 @@ struct AVLTree::AVLNote
     AVLNote(int value);
     ~AVLNote();//+-?
     void add(int number);//+;
-    void del(int number);
-    bool contains(int number) const;//+-
+    void del(int number, AVLNote *parent);//+-?
+    bool contains(int number) const;//+
 
     bool empty();//+-?
+
+private:
+    //AVLNote * find(int number);
 };
 
 #endif // AVLTREE_H
