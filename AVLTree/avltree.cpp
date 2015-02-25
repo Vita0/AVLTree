@@ -118,13 +118,32 @@ bool AVLTree::AVLNote::contains(int number) const
         if (note_left->empty())
             return false;
         else
-        return note_left->contains(number);
+            return note_left->contains(number);
     else
         if (note_right->empty())
             return false;
         else
-        return note_right->contains(number);
+            return note_right->contains(number);
 }
+
+void AVLTree::del(int number)
+{
+    if (!empty())
+        note->del(number, note);
+}
+
+void AVLTree::AVLNote::del(int number, AVLNote *parent)
+{
+
+}
+
+/* --------  find() для не повторного использования кода ------
+   --------      в del() и contains() класса AVLNode     ------ */
+
+//AVLTree::AVLNote * AVLTree::AVLNote::find(int number)
+//{
+//
+//}
 
 //AVLTree::AVLTree(AVLTree &avlt)
 //    :value(avlt.value)
